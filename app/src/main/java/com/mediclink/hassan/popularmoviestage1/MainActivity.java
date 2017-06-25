@@ -126,10 +126,12 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
             item.setChecked(true);
             ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             if (manager.getActiveNetworkInfo() != null && manager.getActiveNetworkInfo().isConnected()) {
-                new getJsonData().execute("top rated");
+                 new getJsonData().execute("top rated");
 
                 return true;
-            }else{ onErr(); }
+            }else{
+                onErr();
+            }
         }
         return false;
     }
